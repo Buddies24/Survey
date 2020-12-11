@@ -1,0 +1,111 @@
+﻿@model IEnumerable<survey.Models.UserSurvey>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Surnames)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Names)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPizzaLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPastaLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPapNWorsLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isChickenStirFryLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isBeefStirFryLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isOtherFoodLover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LikeEatingOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LikeWatchingMovies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LikeWatchingTV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LikeListeningToRadio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surnames)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Names)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isPizzaLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isPastaLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isPapNWorsLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isChickenStirFryLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isBeefStirFryLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isOtherFoodLover)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LikeEatingOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LikeWatchingMovies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LikeWatchingTV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LikeListeningToRadio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

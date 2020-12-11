@@ -1,0 +1,130 @@
+﻿@model survey.Models.UserSurvey
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserSurvey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Surnames)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surnames)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Names)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Names)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPizzaLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPizzaLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPastaLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPastaLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPapNWorsLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPapNWorsLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isChickenStirFryLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isChickenStirFryLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isBeefStirFryLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isBeefStirFryLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isOtherFoodLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isOtherFoodLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeEatingOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeEatingOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeWatchingMovies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeWatchingMovies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeWatchingTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeWatchingTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeListeningToRadio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeListeningToRadio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

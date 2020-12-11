@@ -1,0 +1,65 @@
+﻿@model survey.Models.SummaryDTO
+@{
+    ViewBag.Title = "Results";
+}
+<style>
+    .allignLeft{
+        text-align : left !important;
+    }
+</style>
+<h2>Results</h2>
+
+
+<div>
+    <hr />
+    <table class="table table-responsive allignLeft">
+        <tbody>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.numberOfSurveyes)</td>
+                <td>@Html.DisplayFor(model => model.numberOfSurveyes)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.averageAge)</td>
+                <td>@Html.DisplayFor(model => model.averageAge)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.oldPersonName)</td>
+                <td>@Html.DisplayFor(model => model.oldPersonName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.youngPersonName)</td>
+                <td>@Html.DisplayFor(model => model.youngPersonName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.percentagePeopleLikePizza)</td>
+                <td>@Html.DisplayFor(model => model.percentagePeopleLikePizza)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.percentagePeopleLikePasta)</td>
+                <td>@Html.DisplayFor(model => model.percentagePeopleLikePasta)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.percentagePeopleLikePapWors)</td>
+                <td>@Html.DisplayFor(model => model.percentagePeopleLikePapWors)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.averageEatOut)</td>
+                <td>@Html.DisplayFor(model => model.averageEatOut)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.averageWatchMovies)</td>
+                <td>@Html.DisplayFor(model => model.averageWatchMovies)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.averageWatchTv)</td>
+                <td>@Html.DisplayFor(model => model.averageWatchTv)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.averageListenRadio)</td>
+                <td>@Html.DisplayFor(model => model.averageListenRadio)</td>
+            </tr>
+        </tbody>
+    </table>
+ 
+    <a href="/home/Index" class="btn btn-success btn-block">Ok</a>
+</div>

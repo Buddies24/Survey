@@ -1,0 +1,136 @@
+﻿@model survey.Models.UserSurvey
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>UserSurvey</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Surnames)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surnames)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Names)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Names)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPizzaLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPizzaLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPastaLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPastaLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPapNWorsLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPapNWorsLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isChickenStirFryLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isChickenStirFryLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isBeefStirFryLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isBeefStirFryLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isOtherFoodLover)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isOtherFoodLover)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeEatingOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeEatingOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeWatchingMovies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeWatchingMovies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeWatchingTV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeWatchingTV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LikeListeningToRadio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LikeListeningToRadio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

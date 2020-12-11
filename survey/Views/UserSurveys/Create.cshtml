@@ -1,0 +1,221 @@
+﻿@model survey.Models.UserSurvey
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    .control-label{
+        text-align:left !important;
+    }
+</style>
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+
+        <div class="form-horizontal">
+            <h4>Take Survey</h4>
+            <hr />
+            <div class="panel panel-info">
+                <div class="panel-heading">Personal information <span class="glyphicon glyphicon-user"></span></div>
+                <div class="panel-body">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Surnames, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Surnames, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Surnames, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Names, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Names, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Names, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ContactNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ContactNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" ,min = 5,max=120} })
+                            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Favourites <span class="glyphicon glyphicon-heart"></span></div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isPizzaLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isPizzaLover)
+                                @Html.ValidationMessageFor(model => model.isPizzaLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isPastaLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isPastaLover)
+                                @Html.ValidationMessageFor(model => model.isPastaLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isPapNWorsLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isPapNWorsLover)
+                                @Html.ValidationMessageFor(model => model.isPapNWorsLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isChickenStirFryLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isChickenStirFryLover)
+                                @Html.ValidationMessageFor(model => model.isChickenStirFryLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isBeefStirFryLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isBeefStirFryLover)
+                                @Html.ValidationMessageFor(model => model.isBeefStirFryLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.isOtherFoodLover, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                @Html.EditorFor(model => model.isOtherFoodLover)
+                                @Html.ValidationMessageFor(model => model.isOtherFoodLover, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">On a scale 1 to 5 indicate whether you strongly agree to strongly disagree <span class="glyphicon glyphicon-star"></span></div>
+                <div class="panel-body">
+                    <!-- #region Rating -->
+                    <table width="100%" class="table table-striped table-hover" border="1">
+                        <thead style="background-color:cyan;color:black;">
+                            <tr>
+                                <th>
+                                </th>
+
+                                @foreach (var item in (SelectList)ViewBag.RatingValues)
+                                {
+                                    <th>
+                                        <label class="control-label">@item.Text</label>
+                                    </th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.LikeEatingOut)
+
+                                </td>
+                                @foreach (var item in (SelectList)ViewBag.RatingValues)
+                                {
+                                    <td>
+                                        @Html.RadioButtonFor(model => model.LikeEatingOut, item.Value, false)
+
+                                    </td>
+                                }
+
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.LikeWatchingMovies)
+                                </td>
+                                @foreach (var item in (SelectList)ViewBag.RatingValues)
+                                {
+                                    <td>
+                                        @Html.RadioButtonFor(model => model.LikeWatchingMovies, item.Value, false)
+
+                                    </td>
+                                }
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.LikeWatchingTV)
+                                </td>
+                                @foreach (var item in (SelectList)ViewBag.RatingValues)
+                                {
+                                    <td>
+                                        @Html.RadioButtonFor(model => model.LikeWatchingTV, item.Value, false)
+
+                                    </td>
+                                }
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    @Html.LabelFor(model => model.LikeListeningToRadio)
+                                </td>
+                                @foreach (var item in (SelectList)ViewBag.RatingValues)
+                                {
+                                    <td>
+                                        @Html.RadioButtonFor(model => model.LikeListeningToRadio, item.Value, false)
+                                    </td>
+                                }
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- #endregion -->
+                    <div>
+                        @Html.ValidationMessageFor(model => model.LikeEatingOut, "", new { @class = "text-danger" }) <br />
+                        @Html.ValidationMessageFor(model => model.LikeListeningToRadio, "", new { @class = "text-danger" }) <br />
+                        @Html.ValidationMessageFor(model => model.LikeWatchingMovies, "", new { @class = "text-danger" }) <br />
+                        @Html.ValidationMessageFor(model => model.LikeWatchingTV, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
